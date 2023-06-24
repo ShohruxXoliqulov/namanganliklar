@@ -10,15 +10,15 @@ class PagesController extends Controller
         return view('welcome');
     }
 
-    public function article(){
+    public function get_article(){
         return view('pages.article');
     }
 
-    public function contact(){
+    public function get_contact(){
         return view('pages.contact');
     }
 
-    public function list(){
+    public function get_list(){
         return view('pages.list');
     }
 }

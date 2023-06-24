@@ -7,21 +7,21 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-    <div class="layer">
+    <!-- <div class="layer">
         <div class="modal-box basic-flex">
-        <button type="button" class="btn hide-modal-btn">x</button>
-        <h4>Подписывайтесь на наш канал в Telegram и будьте всегда в курсе самых последних новостей:</h4>
-        <div class="telegram-join  basic-flex">
-            <a href="#"><img src="/assets/img/tg.png" alt="Telegram">Подписатся</a>
+            <button type="button" class="btn hide-modal-btn">x</button>
+            <h4>Подписывайтесь на наш канал в Telegram и будьте всегда в курсе самых последних новостей:</h4>
+            <div class="telegram-join  basic-flex">
+                <a href="#"><img src="/assets/img/tg.png" alt="Telegram">Подписатся</a>
+            </div>
         </div>
-    </div>
-  </div>
+    </div> -->
   <div class="menu-mask"></div>
   <main>
     <header class="main-header">
       <div class="container">
         <div class="basic-flex header__top">
-          <a href="#" class="logo">
+          <a href="{{ route('welcome') }}" class="logo">
             <img src="/assets/img/logo.png" alt="NAMANGANLIKLAR24">
           </a>
           <div class="currencies basic-flex">
@@ -76,7 +76,7 @@
         </div>
         <ul class="footer-menu">
           <li class="footer-menu__item"><a href="#" class="footer-menu__link">Информация о сайте</a></li>
-          <li class="footer-menu__item"><a href="{{ route('pages.contact') }}" class="footer-menu__link">Напишите нам</a></li>
+          <li class="footer-menu__item"><a href="{{ route('pages.get_contact') }}" class="footer-menu__link">Напишите нам</a></li>
           <li class="footer-menu__item"><a href="#" class="footer-menu__link">Реклама</a></li>
           <li class="footer-menu__item"><a href="#" class="footer-menu__link">Прислать новость</a></li>
         </ul>

@@ -40,7 +40,7 @@
             <h2 class="news__title">Последние новости</h2>
             <ul class="news__list basic-flex">
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom1.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">По факту прорыва Сардобинского водохранилища 
@@ -52,7 +52,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom2.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">Мирзиёев: «Нам следовало бы принять некоторые правила 
@@ -65,7 +65,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom3.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">В Ташкенте планируют ввести новую систему электронных проездных билетов
@@ -76,7 +76,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom1.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">По факту прорыва Сардобинского водохранилища 
@@ -88,7 +88,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom2.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">Мирзиёев: «Нам следовало бы принять некоторые правила 
@@ -101,7 +101,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom3.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">В Ташкенте планируют ввести новую систему электронных проездных билетов
@@ -112,7 +112,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom1.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">По факту прорыва Сардобинского водохранилища 
@@ -124,7 +124,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom1.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">По факту прорыва Сардобинского водохранилища 
@@ -136,7 +136,7 @@
                 </a>
               </li>
               <li class="news__item">
-                <a href="{{ route('pages.article') }}" class="basic-flex news__link">
+                <a href="{{ route('pages.get_article') }}" class="basic-flex news__link">
                   <div class="news-image-wrapper"><img src="/assets/img/bottom3.png" alt="Bottom Img"></div>
                   <div class="news-box basic-flex">
                     <h4 class="news__title">В Ташкенте планируют ввести новую систему электронных проездных билетов
@@ -154,25 +154,25 @@
               <h4 class="popular-news__title">Cамые популярные новости</h4>
               <ul class="popular-news__list">
                 <li class="popular-news__item">
-                  <a href="{{ route('pages.article') }}">
+                  <a href="{{ route('pages.get_article') }}">
                     <p class="popular-news__description">По факту прорыва Сардобинского водохранилища возбуждено уголовное дело</p>
                     <span class="popular-news__date">11:31 / 15.05.2020</span>
                   </a>
                 </li>
                 <li class="popular-news__item">
-                  <a href="{{ route('pages.article') }}">
+                  <a href="{{ route('pages.get_article') }}">
                     <p class="popular-news__description">По факту прорыва Сардобинского водохранилища возбуждено уголовное дело</p>
                     <span class="popular-news__date">11:31 / 15.05.2020</span>
                   </a>
                 </li>
                 <li class="popular-news__item">
-                  <a href="{{ route('pages.article') }}">
+                  <a href="{{ route('pages.get_article') }}">
                     <p class="popular-news__description">По факту прорыва Сардобинского водохранилища возбуждено уголовное дело</p>
                     <span class="popular-news__date">11:31 / 15.05.2020</span>
                   </a>
                 </li>
                 <li class="popular-news__item">
-                  <a href="{{ route('pages.article') }}">
+                  <a href="{{ route('pages.get_article') }}">
                     <p class="popular-news__description">По факту прорыва Сардобинского водохранилища возбуждено уголовное дело</p>
                     <span class="popular-news__date">11:31 / 15.05.2020</span>
                   </a>
