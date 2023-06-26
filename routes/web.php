@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\CategoryController; 
-use App\Http\Controllers\Admin\AdminController;
+// use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +23,12 @@ Route::auto('/pages', PagesController::class);
 // ADMIN
 
 Route::prefix('admin/')->name('admin.')->group(function(){
-    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('dashboard', function(){
+        return view('admin.layouts.dashboard');
+    })->name('dashboard');
 
     Route::resources([
-        'category' => CategoryController::class,
+        'categories' => CategoryController::class,
     ]);
 });
 
