@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\CategoryController; 
-// use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +29,7 @@ Route::prefix('admin/')->name('admin.')->group(function(){
 
     Route::resources([
         'categories' => CategoryController::class,
+        'posts' => PostController::class,
     ]);
 });
 
