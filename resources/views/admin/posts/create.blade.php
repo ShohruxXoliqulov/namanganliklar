@@ -9,7 +9,7 @@
         <div class="col-sm-12 col-xl-6 form-control">
             <div class="bg-light rounded h-100 p-4 form-control">
                 <h6 class="mb-4">Post qo'shish</h6>
-                <form method="POST" action="{{ route('admin.posts.store') }}">
+                <form method="POST" action="{{ route('admin.posts.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Title uz</label>
@@ -41,7 +41,15 @@
                         <label class="form-label">Body ru</label>
                         <input type="text" name="body_ru" class="form-control" aria-describedby="emailHelp">
                     </div>
-                        <button type="submit" class="btn btn-primary">Qo'shish</button>
+
+                    <strong>Category:</strong>
+                    <select name="category_id" id="" class="form_control">
+                        @foreach($categories as $item)
+                            <option value="{{ $item->id }}">{{ $item->c_name_uz }}</option>
+                        @endforeach
+                    </select> <br>
+
+                    <button type="submit" class="btn btn-primary mt-4">Qo'shish</button>
                 </form>
             </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -20,5 +21,14 @@ class PagesController extends Controller
 
     public function get_list(){
         return view('pages.list');
+    }
+
+    public function post_message(Request $request){
+        DB::table('applies')->insert([
+            'full_name' => $request->full_name,
+            'phone' => $request->phone,
+            'message' => $request->message,
+        ]);
+        return back();
     }
 }

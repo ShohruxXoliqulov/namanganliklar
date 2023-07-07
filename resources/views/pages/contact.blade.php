@@ -39,20 +39,21 @@
           <div class="form__wrapper">
             <h3 class="form__wrapper-title">Напишите нам
             </h3>
-            <form method="GET">
+            <form method="post" action="/pages/message">
+              @csrf
               <div class="form__top">
-                <label><input type="text" placeholder="Имя" required></label>
-                <label><input type="email" placeholder="Электронная почта" required></label>
-                <label><input type="text" placeholder="Номер телефона" required></label>
-                <label><input type="text" placeholder="Тема" required></label>
-                <textarea class="contact-tetxarea" placeholder="Текст" required></textarea>
+                <label><input type="text" name="full_name" placeholder="Имя" required></label>
+               
+                <label><input type="text" name="phone" placeholder="Номер телефона" required></label>
+                
+                <textarea class="contact-tetxarea" name="message" placeholder="Текст" required></textarea>
               </div>
               <div class="form__bottom">
                 <input type="file" name="file" id="file" class="inputfile">
-                <label for="file" class="basic-flex">Прикрепить файл</label>
+               
                 <label class="basic-flex verification-code-wrapper">
-                  <input type="text" placeholder="Код" required>
-                  <span class="verification-code">4 k 7 Z a</span>
+                
+                  
                 </label>
                 <button type="submit" class="btn send-btn">Отправить</button>
               </div>

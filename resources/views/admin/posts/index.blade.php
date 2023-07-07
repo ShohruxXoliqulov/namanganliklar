@@ -27,7 +27,7 @@
                                             <th scope="row">{{ ++$loop->index }}</th>
                                             <td>{{ $item->title_uz }}</td>
                                             <td>{{ $item->title_ru }}</td>
-                                            <td>{{ $item->img }}</td>
+                                            <td><img src="/files/{{ $item->img }}" width="60px"></td>
                                             <td>{{ $item->body_uz }}</td>
                                             <td>{{ $item->body_ru }}</td>
                                             <td>{{ $item->views }}</td>

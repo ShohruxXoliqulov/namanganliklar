@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('full_name')->nullable();
             $table->string('phone')->nullable();
             $table->text('message')->nullable();
-            $table->integer('status')->nullable();
+            $table->integer('status')->nullable()->default(0);
             $table->timestamps();
         });
     }

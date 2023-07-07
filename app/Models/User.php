@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected = $guarded [ ];
+    protected $guarded = [ ];
 
     public function role(){
         return $this->hasOne(Role::class);

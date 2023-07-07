@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\CategoryController; 
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,15 +23,17 @@ Route::auto('/pages', PagesController::class);
 
 // ADMIN
 
-Route::prefix('admin/')->name('admin.')->group(function(){
+Route::prefix('admin/')->middleware('auth')->name('admin.')->group(function(){
     Route::get('dashboard', function(){
         return view('admin.layouts.dashboard');
-    })->name('dashboard');
+    })->middleware('auth')->name('dashboard');
 
     Route::resources([
         'categories' => CategoryController::class,
         'posts' => PostController::class,
     ]);
+    
+    Route::resource('messages', MessageController::class)->only('index', 'show', 'destroy');
 });
 
 
