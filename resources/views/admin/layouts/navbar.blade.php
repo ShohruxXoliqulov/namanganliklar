@@ -10,58 +10,57 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     @php
-                        $messages = DB::table('applies')->where('status', 0)->latest()->take(5)->get();
-                        $c =  DB::table('applies')->where('status', 0)->count();
+                    $messages = DB::table('applies')->where('status', 0)->latest()->take(5)->get();
+                    $c = DB::table('applies')->where('status', 0)->count();
                     @endphp
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            
+
                             <i class="fa fa-envelope me-lg-2"></i>
                             @if($c != 0)
-                                <font style="color: red;">{{ $c }}</font>
+                            <font style="color: red;">{{ $c }}</font>
                             @endif
                             <span class="d-none d-lg-inline-flex">Message</span>
                         </a>
-                        
+
 
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             @foreach($messages as $item)
-                                <a href="{{ route('admin.messages.show', $item->id) }}" class="dropdown-item">
-                                    <div class="d-flex align-items-center">
-                                        <img class="rounded-circle" src="/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                        <div class="ms-2">
-                                            <h6 class="fw-normal mb-0">{{ $item->full_name }}</h6>
-                                            <small>{{ $item->created_at }}</small>
-                                        </div>
+                            <a href="{{ route('admin.messages.show', $item->id) }}" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">{{ $item->full_name }}</h6>
+                                        <small>{{ $item->created_at }}</small>
                                     </div>
-                                </a>
+                                </div>
+                            </a>
                             @endforeach
                             <hr class="dropdown-divider">
-                            <a href="/admin/messages/index" class="dropdown-item text-center">See all message</a>
+                            <a href="{{ route('admin.messages.index') }}" class="dropdown-item text-center">See all message</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
+                        @php
+                        $audits = DB::table('audits')->where('status', 0, )->take(5)->get();
+                        $c = DB::table('audits')->where('status', 0)->count();
+                        @endphp
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
+                            @if($c != 0)
+                            <font style="color: red;">{{ $c }}</font>
+                            @endif
                             <span class="d-none d-lg-inline-flex">Notificatin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
+                            @foreach($audits as $item)
+                            <a href="{{ route('admin.audits.show', $item->id) }}" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">{{ $item->event }}</h6>
+                                <small>{{ $item->date }}</small>
                             </a>
+                            @endforeach
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                            <a href="{{ route('admin.audits.index') }}" class="dropdown-item text-center">See all notifications</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -70,9 +69,13 @@
                             <span class="d-none d-lg-inline-flex">John Doe</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="/profile" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <!-- <a href="#" class="logout"> -->
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="text">Logout</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post_Teg extends Model
 {
     use HasFactory;
+
+    protected $guarded = [ ]; 
 }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('device')->nullable();
             $table->string('event')->nullable();
             $table->text('data')->nullable();
+            $table->integer('status')->nullable()->default(0);
             $table->dateTime('date');
         });
     }

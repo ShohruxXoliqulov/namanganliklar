@@ -14,4 +14,8 @@ class Post extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+
+    public function tegs(){
+        return $this->belongsToMany(Teg::class, 'post_tegs'); 
+    }
 }

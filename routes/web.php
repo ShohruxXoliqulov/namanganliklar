@@ -5,6 +5,8 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\CategoryController; 
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\AuditController;
+use App\Http\Controllers\Admin\TegController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +33,11 @@ Route::prefix('admin/')->middleware('auth')->name('admin.')->group(function(){
     Route::resources([
         'categories' => CategoryController::class,
         'posts' => PostController::class,
+        'tegs' => TegController::class,
     ]);
     
     Route::resource('messages', MessageController::class)->only('index', 'show', 'destroy');
+    Route::resource('audits', AuditController::class)->only('index', 'show', 'destroy');
 });
 
 

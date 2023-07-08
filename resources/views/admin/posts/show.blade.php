@@ -44,6 +44,11 @@
                                         <td>Category :</td>
                                         <td>{{ $post->category_id }}</td>       
                                     </tr>
+
+                                    <tr>
+                                        <td>Teg :</td>
+                                        <td>{{ $post->teg_id }}</td>       
+                                    </tr>
                                 </table>
                             </div>
                         </div>

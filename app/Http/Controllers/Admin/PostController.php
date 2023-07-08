@@ -6,6 +6,7 @@ use App\Events\AuditEvent;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Teg;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -33,8 +34,8 @@ class PostController extends Controller
     {
 
         $categories = Category::all();
-      
-        return view('admin.posts.create', compact('categories'));
+        $tegs = Teg::all();
+        return view('admin.posts.create', compact('categories', 'tegs'));
     }
 
     /**
@@ -54,7 +55,7 @@ class PostController extends Controller
         Post::create($requestData);
 
         $user = auth()->user()->name;
-        event(new AuditEvent($user, 'add', $request));
+        event(new AuditEvent($user, 'Post qo`shildi', json_encode($request)));
         return redirect()->route('admin.posts.index')->with('succes', 'Muvaffaqiyatli qo`shildi!');
     }
 
@@ -80,7 +81,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-      
+        $tegs = Teg::all();
         return view('admin.posts.update', compact('categories', 'post'));
     }
 
@@ -104,6 +105,9 @@ class PostController extends Controller
         }
         $post->update($requestData);
 
+        $user = auth()->user()->name;
+        event(new AuditEvent($user, 'Post yangilandi', json_encode($request)));
+
         return redirect()->route('admin.posts.index')->with('succes', 'Muvaffaqiyatli yangilandi!');
     }
 
@@ -118,6 +122,9 @@ class PostController extends Controller
         if(isset($post->img) && file_exists(public_path('/files/'.$post->img))){
             unlink(public_path('/files/'.$post->img));
         }
+        $user = auth()->user()->name;
+        event(new AuditEvent($user, 'Post o`chirildi', json_encode($post)));
+
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('succes', 'Muvaffaqiyatli o`chirildi!');

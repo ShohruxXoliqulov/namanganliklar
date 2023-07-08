@@ -43,11 +43,18 @@
                     </div>
 
                     <strong>Category:</strong>
-                    <select name="category_id" id="" class="form_control">
+                    <select class="select form-control" name="category_id" id="">
                         @foreach($categories as $item)
-                            <option value="{{ $item->id }}">{{ $item->c_name_uz }}</option>
+                        <option value="{{ $item->id }}">{{ $item->c_name_uz }}</option>
                         @endforeach
                     </select> <br>
+                    <br>
+                    <strong>Tegs:</strong>
+                    <select class="select form-control" id="example-multiple-selected" multiple="multiple">
+                        @foreach($tegs as $item)
+                            <option value="{{ $item->id }}">{{ $item->teg_uz }}</option>
+                        @endforeach
+                    </select>
 
                     <button type="submit" class="btn btn-primary mt-4">Qo'shish</button>
                 </form>

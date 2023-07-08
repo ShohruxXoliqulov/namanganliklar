@@ -50,6 +50,13 @@
                         @endforeach
                     </select> <br>
 
+                    <strong>Teg:</strong>
+                    <select name="teg_id" id="" class="form_control">
+                        @foreach($tegs as $item)
+                            <option value="{{ $item->id }}">{{ $item->teg_uz }}</option>
+                        @endforeach
+                    </select> <br>
+
                     <button type="submit" class="btn btn-primary mt-4">Qo'shish</button>
                 </form>
             </div>
