@@ -82,7 +82,7 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $tegs = Teg::all();
-        return view('admin.posts.update', compact('categories', 'post'));
+        return view('admin.posts.update', compact('categories', 'tegs'));
     }
 
     /**
