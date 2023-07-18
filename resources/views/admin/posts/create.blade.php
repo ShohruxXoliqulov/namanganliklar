@@ -50,7 +50,7 @@
                     </select> <br>
                     <br>
                     <strong>Tegs:</strong>
-                    <select class="select form-control" id="example-multiple-selected" multiple="multiple">
+                    <select class="select form-control" id="example-multiple-selected" name="teg_id[]" multiple>
                         @foreach($tegs as $item)
                             <option value="{{ $item->id }}">{{ $item->teg_uz }}</option>
                         @endforeach

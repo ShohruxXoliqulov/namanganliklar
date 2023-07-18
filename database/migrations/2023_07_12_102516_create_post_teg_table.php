@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('post__tegs', function (Blueprint $table) {
+        Schema::create('post_teg', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('post_id');
-            $table->foreignId('teg_id');
+            $table->integer('post_id')->nullable();
+            $table->integer('teg_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post__tegs');
+        Schema::dropIfExists('post_teg');
     }
 };

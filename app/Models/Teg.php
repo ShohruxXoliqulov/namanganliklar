@@ -9,9 +9,9 @@ class Teg extends Model
 {
     use HasFactory;
 
-    protected $guarded = [ ];
+    protected $guarded = [];
 
     public function posts(){
-        return $this->belongsToMany(Post::class, 'post_tegs');
+        return $this->belongsToMany(Post::class);
     }
 }

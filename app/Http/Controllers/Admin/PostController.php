@@ -20,8 +20,6 @@ class PostController extends Controller
     {
         $posts = Post::paginate(10);
 
-        
-
         return view('admin.posts.index', compact('posts'));
     }
 
@@ -46,17 +44,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $requestData = $request->all();
 
         if ($request->hasFile('img'))
         {
             $requestData['img'] = $this->img_upload();
         }
-        Post::create($requestData);
+        $post = Post::create($requestData);
+
+        $post->tegs()->attach($request->teg_id);
 
         $user = auth()->user()->name;
         event(new AuditEvent($user, 'Post qo`shildi', json_encode($request)));
-        return redirect()->route('admin.posts.index')->with('succes', 'Muvaffaqiyatli qo`shildi!');
+        return redirect()->route('admin.posts.index', compact('post'))->with('succes', 'Muvaffaqiyatli qo`shildi!');
     }
 
     /**
@@ -82,7 +83,7 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $tegs = Teg::all();
-        return view('admin.posts.update', compact('categories', 'tegs'));
+        return view('admin.posts.update', compact('post', 'categories', 'tegs'));
     }
 
     /**
@@ -105,6 +106,8 @@ class PostController extends Controller
         }
         $post->update($requestData);
 
+        $post->tegs()->sync($request->teg_id);
+
         $user = auth()->user()->name;
         event(new AuditEvent($user, 'Post yangilandi', json_encode($request)));
 
@@ -124,7 +127,7 @@ class PostController extends Controller
         }
         $user = auth()->user()->name;
         event(new AuditEvent($user, 'Post o`chirildi', json_encode($post)));
-
+        $post->tegs()->detach();
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('succes', 'Muvaffaqiyatli o`chirildi!');

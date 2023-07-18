@@ -6,7 +6,7 @@
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Postlar</h6>
                             <div class="d-flex justify-content-end m-3">
-                                <a href="{{ route('admin.posts.index') }}"><button type="button" class="btn btn-primary m-2"><ion-icon style="font-size: 20px;"2 name="create-outline"></ion-icon>Orqaga</button></a>
+                                <a href="{{ route('admin.posts.index') }}"><button type="button" class="btn btn-primary m-2">Orqaga</button></a>
                             </div>
                             <div class="table-responsive">
                                 <table class="table">
@@ -42,12 +42,16 @@
 
                                     <tr>
                                         <td>Category :</td>
-                                        <td>{{ $post->category_id }}</td>       
+                                        <td>{{ $post->c_name_uz }}</td>       
                                     </tr>
 
                                     <tr>
-                                        <td>Teg :</td>
-                                        <td>{{ $post->teg_id }}</td>       
+                                        <td>Tegs :</td>
+                                        <td>
+                                            @foreach($post->tegs as $item)
+                                                #{{ $item->teg_uz }} <br>
+                                            @endforeach
+                                        </td>       
                                     </tr>
                                 </table>
                             </div>

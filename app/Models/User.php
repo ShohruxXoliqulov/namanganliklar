@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role_id',
         'email',
         'password',
     ];
@@ -42,9 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $guarded = [ ];
-
     public function role(){
-        return $this->hasOne(Role::class);
+        return $this->belongsTo(Role::class);
     }
 }

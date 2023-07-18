@@ -44,16 +44,20 @@
                     </div>
 
                     <strong>Category:</strong>
-                    <select name="category_id" id="" class="form_control">
+                    <select name="category_id" id="" class="select form-control">
                         @foreach($categories as $item)
-                            <option value="{{ $item->id }}">{{ $item->c_name_uz }}</option>
+                            <option @if($item->id == $post->category_id) selected @endif value="{{ $item->id }}">{{ $item->c_name_uz }}</option>
                         @endforeach
                     </select> <br>
 
                     <strong>Teg:</strong>
-                    <select name="teg_id" id="" class="form_control">
+                    <select name="teg_id" id="example-multiple-selected" class="select form-control" multiple>
                         @foreach($tegs as $item)
-                            <option value="{{ $item->id }}">{{ $item->teg_uz }}</option>
+                            <option 
+                            @foreach($post->tegs as $postTeg)
+                                @if($postTeg->id == $item->id) selected @endif
+                            @endforeach
+                            value="{{ $item->id }}">{{ $item->teg_uz }}</option>
                         @endforeach
                     </select> <br>
 
