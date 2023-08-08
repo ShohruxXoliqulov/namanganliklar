@@ -1,8 +1,8 @@
 <div class="apps-block container basic-flex">
       <div class="apps-block__image"></div>
       <div class="apps-block__content">
-        <h4>Всегда будьте в курсе последних новостей!</h4>
-        <p>Установите мобильное приложение NAMANGANLIKLAR24 и все новости в вашем кармане!</p>
+        <h4>@lang('home.adc_2_title')</h4>
+        <p>@lang('home.adc_2_body')</p>
       </div>
       <div class="apps-block__links basic-flex">
         <div class="links__item">

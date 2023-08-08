@@ -34,14 +34,15 @@
               <input type="search" class="search-input">
               <button type="submit" class="btn search-btn"></button>
             </form>
+            
             <div class="languages">
-              <button type="button" class="btn language__option language__option--active">РУ</button>
+              <a href="/lang/ru" class="btn language__option language__option--active">Ру</a>
               <div class="languages__list">
-                <button type="button" class="btn language__option language__option--uz" data-status="disabled">UZ</button>
+                <a href="/lang/uz" class="btn language__option language__option--uz" data-status="disabled">Uz</a>
               </div>
             </div> 
             <div class="telegram-join basic-flex">
-              <a href="#"><img src="/assets/img/tg.png" alt="Telegram">Подписатся</a>
+              <a href="#"><img src="/assets/img/tg.png" alt="Telegram"><?php echo __('home.obuna'); ?></a>
             </div>
           </div>
         </div>
@@ -65,25 +66,25 @@
       <div class="footer__top basic-flex">
         <a href="#" class="footer_logo"><img src="/assets/img/logo-blue.png" alt="NAMANGANLIKLAR24"></a>
         <div class="join-telegram-wrapper basic-flex">
-          <p>Подписывайтесь на наш канал в Telegram и будьте всегда в курсе самых последних новостей:</p>
-          <a href="#" class="join-telegram">Подписатся</a>
+          <p>@lang('home.telegram')</p>
+          <a href="#" class="join-telegram">@lang('home.obuna')</a>
         </div>
       </div>
       <div class="footer__bottom">
         <div class="about-site">
-          <h4>О сайте</h4>
-          <p>Воспроизводство, копирование, тиражирование, распространение и иное использование информации с сайта «NAMANGANLIKLAR24.UZ» возможно только с предварительного письменного разрешения редакции.</p>
+          <h4>@lang('home.about_sayt')</h4>
+          <p>@lang('home.about_sayt_body')</p>
         </div>
         <ul class="footer-menu">
-          <li class="footer-menu__item"><a href="#" class="footer-menu__link">Информация о сайте</a></li>
-          <li class="footer-menu__item"><a href="{{ route('pages.get_contact') }}" class="footer-menu__link">Напишите нам</a></li>
-          <li class="footer-menu__item"><a href="#" class="footer-menu__link">Реклама</a></li>
-          <li class="footer-menu__item"><a href="#" class="footer-menu__link">Прислать новость</a></li>
+          <li class="footer-menu__item"><a href="#" class="footer-menu__link">@lang('home.information')</a></li>
+          <li class="footer-menu__item"><a href="{{ route('pages.get_contact') }}" class="footer-menu__link">@lang('home.contact')</a></li>
+          <li class="footer-menu__item"><a href="#" class="footer-menu__link">@lang('home.adc')</a></li>
+          <li class="footer-menu__item"><a href="#" class="footer-menu__link">@lang('home.send_news')</a></li>
         </ul>
         <ul class="footer-menu">
-          <li class="footer-menu__item"><a href="#" class="footer-menu__link">Использование материалов </a></li>
-          <li class="footer-menu__item"><a href="#" class="footer-menu__link">Темы дня</a></li>
-          <li class="footer-menu__item"><a href="#" class="footer-menu__link">Наша команда</a></li>
+          <li class="footer-menu__item"><a href="#" class="footer-menu__link">@lang('home.learn_materials')</a></li>
+          <li class="footer-menu__item"><a href="#" class="footer-menu__link">@lang('home.daily_theme')</a></li>
+          <li class="footer-menu__item"><a href="#" class="footer-menu__link">@lang('home.our_team')</a></li>
         </ul>
       </div>
     </div>

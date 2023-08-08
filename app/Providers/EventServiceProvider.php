@@ -24,6 +24,14 @@ class EventServiceProvider extends ServiceProvider
         AuditEvent::class => [
             AuditEventListener::class,
         ],
+
+        LoginEvent::class => [
+            LoginEventListener::class,
+        ],
+
+        LogoutEvent::class => [
+            LogoutEventListener::class,
+        ],
     ];
 
     /**

@@ -16,8 +16,6 @@
                                 <th scope="col">Title uz</th>
                                 <th scope="col">Title ru</th>
                                 <th scope="col">Image</th>
-                                <th scope="col">Body uz</th>
-                                <th scope="col">Body ru</th>
                                 <th scope="col">Views</th>
                             </tr>
                         </thead>
@@ -28,8 +26,6 @@
                                 <td>{{ $item->title_uz }}</td>
                                 <td>{{ $item->title_ru }}</td>
                                 <td><img src="/files/{{$item->img}}" width="60px"></td>
-                                <td>{{ $item->body_uz }}</td>
-                                <td>{{ $item->body_ru }}</td>
                                 <td>{{ $item->views }}</td>
                                 <td>
                                     <form method="POST" action="{{ route('admin.posts.destroy', $item->id) }}">

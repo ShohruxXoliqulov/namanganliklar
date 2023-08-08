@@ -74,5 +74,5 @@
                 </a>
               </li>
             </ul>
-            <button type="button" class="btn load-more-btn">Больше новостей</button>
+            <button type="button" class="btn load-more-btn">@lang('home.more_news')</button>
 </div>

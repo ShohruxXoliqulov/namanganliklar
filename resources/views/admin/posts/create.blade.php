@@ -35,11 +35,11 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Body uz</label>
-                        <input type="text" name="body_uz" class="form-control" aria-describedby="emailHelp">
+                        <textarea class="ckeditor form-control" name="body_uz" value="{{ old('body_uz') }}"></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Body ru</label>
-                        <input type="text" name="body_ru" class="form-control" aria-describedby="emailHelp">
+                        <textarea class="ckeditor form-control" name="body_ru" value="{{ old('body_ru') }}"></textarea>
                     </div>
 
                     <strong>Category:</strong>
@@ -63,5 +63,11 @@
     </div>
 </div>
 <!-- Form End -->
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>
 
 @endsection

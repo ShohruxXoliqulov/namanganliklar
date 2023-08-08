@@ -65,36 +65,32 @@
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0">{{ auth()->user()->name }}</h6>
-                        <span>{{ auth()->user()->role->role_name }}</span>
+                        <span></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="{{ route('admin.dashboard') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    @if(auth()->user()->role_id == 1 or auth()->user()->role_id == 3)
+                    @role('SuperAdmin')
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                             <div class="dropdown-menu bg-transparent border-0">
                                 <a href="{{ route('admin.users.index') }}" class="dropdown-item">Admins</a>
                                 <a href="{{ route('admin.roles.index') }}" class="dropdown-item">Roles</a>
-                                @if(auth()->user()->role_id == 3 or auth()->user()->role_id == 1)
+                                
                                     <a href="{{ route('admin.audits.index') }}" class="dropdown-item">Audits</a>
-                                    <a href="#" class="dropdown-item">Logins</a>
-                                @endif
+                                    <a href="{{ route('admin.logins.index') }}" class="dropdown-item">Logins</a>
+                                
                             </div>
                         </div>
-                    @endif
-                    @if(auth()->user()->role_id == 4 or auth()->user()->role_id == 1)
+                    @endrole
+                    @hasanyrole('SuperAdmin|writter')
                         <a href="{{ route('admin.categories.index') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Categories</a>
-                    @endif
-                    @if(auth()->user()->role_id == 4 or auth()->user()->role_id == 1)
                         <a href="{{ route('admin.posts.index') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Posts</a>
-                    @endif
-                    @if(auth()->user()->role_id == 3 or auth()->user()->role_id == 1)
+                    @endhasanyrole
+                    @hasanyrole('SuperAdmin|admin')
                         <a href="{{ route('admin.messages.index') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Xabarlar</a>
-                    @endif
-                    @if(auth()->user()->role_id == 4 or auth()->user()->role_id == 1)
                         <a href="{{ route('admin.tegs.index') }}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Teglar</a>
-                    @endif
+                    @endhasanyrole
                 </div>
             </nav>
         </div>
